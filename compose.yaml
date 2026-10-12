@@ -1,0 +1,13 @@
+services:
+  reliability-lab:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1
+      RELIABILITY_DB: /data/reliability.db
+    volumes:
+      - reliability-data:/data
+
+volumes:
+  reliability-data:
